@@ -1,0 +1,55 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-01 13:25:45.882703",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type",
+  "document_no",
+  "column_break_vbea",
+  "front_image",
+  "back_image"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Data",
+   "label": "Document Type"
+  },
+  {
+   "fieldname": "document_no",
+   "fieldtype": "Data",
+   "label": "Document No"
+  },
+  {
+   "fieldname": "column_break_vbea",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "front_image",
+   "fieldtype": "Attach Image",
+   "label": "Front Image"
+  },
+  {
+   "fieldname": "back_image",
+   "fieldtype": "Attach Image",
+   "label": "Back Image"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-09 14:53:34.252650",
+ "modified_by": "Administrator",
+ "module": "FOS",
+ "name": "FOS Visit KYC",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

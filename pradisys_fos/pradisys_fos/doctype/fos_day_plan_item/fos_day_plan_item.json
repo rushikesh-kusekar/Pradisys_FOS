@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-01 13:31:10.136797",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "case",
+  "customer",
+  "status",
+  "column_break_ebgx",
+  "overdue_amount",
+  "pending_amount",
+  "details"
+ ],
+ "fields": [
+  {
+   "fieldname": "case",
+   "fieldtype": "Link",
+   "label": "Case",
+   "options": "FOS Case"
+  },
+  {
+   "fetch_from": "case.fos_customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "FOS Customer"
+  },
+  {
+   "fetch_from": "case.status",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status"
+  },
+  {
+   "fieldname": "column_break_ebgx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "case.overdue_amt",
+   "fieldname": "overdue_amount",
+   "fieldtype": "Currency",
+   "label": "Overdue Amount"
+  },
+  {
+   "fetch_from": "case.pending_amount",
+   "fieldname": "pending_amount",
+   "fieldtype": "Currency",
+   "label": "Pending Amount"
+  },
+  {
+   "fieldname": "details",
+   "fieldtype": "Button",
+   "label": "Start Visit"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-12-09 14:53:12.628603",
+ "modified_by": "Administrator",
+ "module": "FOS",
+ "name": "FOS Day Plan Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

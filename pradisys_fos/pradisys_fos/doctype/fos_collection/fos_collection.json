@@ -1,0 +1,141 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "Collection-.####",
+ "creation": "2025-12-01 14:31:30.476496",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fos_agent",
+  "case",
+  "customer",
+  "collection_datetime",
+  "day_plan",
+  "column_break_nspg",
+  "amount",
+  "mode",
+  "pg_ref_no",
+  "upi_txn_id",
+  "cheque_no",
+  "bank_name",
+  "receipt_image",
+  "is_deposited",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "fos_agent",
+   "fieldtype": "Link",
+   "label": "FOS Agent",
+   "options": "FOS Agent"
+  },
+  {
+   "fieldname": "case",
+   "fieldtype": "Link",
+   "label": "Case",
+   "options": "FOS Case"
+  },
+  {
+   "fetch_from": "case.fos_customer",
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "FOS Customer"
+  },
+  {
+   "fieldname": "collection_datetime",
+   "fieldtype": "Datetime",
+   "label": "Collection Datetime"
+  },
+  {
+   "fieldname": "day_plan",
+   "fieldtype": "Link",
+   "label": "Day Plan",
+   "options": "FOS Day Plan"
+  },
+  {
+   "fieldname": "column_break_nspg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "label": "Mode",
+   "options": "UPI\nPG\nCash\nCheque"
+  },
+  {
+   "fieldname": "pg_ref_no",
+   "fieldtype": "Data",
+   "label": "PG Ref No"
+  },
+  {
+   "fieldname": "upi_txn_id",
+   "fieldtype": "Data",
+   "label": "UPI Txn ID"
+  },
+  {
+   "fieldname": "cheque_no",
+   "fieldtype": "Data",
+   "label": "Cheque No"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "receipt_image",
+   "fieldtype": "Attach Image",
+   "label": "Receipt Image"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_deposited",
+   "fieldtype": "Check",
+   "label": "Is Deposited"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "FOS Collection",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-09 14:54:04.693913",
+ "modified_by": "Administrator",
+ "module": "FOS",
+ "name": "FOS Collection",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

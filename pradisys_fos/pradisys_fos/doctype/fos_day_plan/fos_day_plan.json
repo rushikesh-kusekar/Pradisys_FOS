@@ -1,0 +1,179 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:full_name_for_doc",
+ "creation": "2025-12-01 13:37:07.008839",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_puk6",
+  "amended_from",
+  "plan_date",
+  "agent",
+  "region",
+  "full_name_for_doc",
+  "column_break_hjdr",
+  "status",
+  "total_planned_amount",
+  "section_break_okfk",
+  "day_start_time",
+  "start_latitude",
+  "end_latitude",
+  "start_day",
+  "column_break_bgow",
+  "day_end_time",
+  "start_longitude",
+  "end_longitude",
+  "end_day",
+  "section_break_ikjt",
+  "day_plan_items"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_puk6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "FOS Day Plan",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "plan_date",
+   "fieldtype": "Date",
+   "label": "Plan Date"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "FOS Agent"
+  },
+  {
+   "fetch_from": "agent.region",
+   "fieldname": "region",
+   "fieldtype": "Link",
+   "label": "Region",
+   "options": "FOS Region"
+  },
+  {
+   "fieldname": "full_name_for_doc",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Full Name For Doc",
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_hjdr",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPlanned\nIn Progress\nCompleted\nCancelled"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "total_planned_amount",
+   "fieldtype": "Currency",
+   "label": "Total Planned Amount"
+  },
+  {
+   "depends_on": "eval:doc.docstatus==1",
+   "fieldname": "section_break_okfk",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Day Start / End"
+  },
+  {
+   "fieldname": "day_start_time",
+   "fieldtype": "Datetime",
+   "label": "Day Start Time"
+  },
+  {
+   "fieldname": "start_latitude",
+   "fieldtype": "Float",
+   "label": "Start Latitude"
+  },
+  {
+   "fieldname": "end_latitude",
+   "fieldtype": "Float",
+   "label": "End Latitude"
+  },
+  {
+   "fieldname": "start_day",
+   "fieldtype": "Button",
+   "label": "Start Day"
+  },
+  {
+   "fieldname": "column_break_bgow",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "day_end_time",
+   "fieldtype": "Datetime",
+   "label": "Day End Time"
+  },
+  {
+   "fieldname": "start_longitude",
+   "fieldtype": "Float",
+   "label": "Start Longitude"
+  },
+  {
+   "fieldname": "end_longitude",
+   "fieldtype": "Float",
+   "label": "End Longitude"
+  },
+  {
+   "fieldname": "end_day",
+   "fieldtype": "Button",
+   "label": "End Day"
+  },
+  {
+   "fieldname": "section_break_ikjt",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "day_plan_items",
+   "fieldtype": "Table",
+   "label": "Day Plan Items",
+   "options": "FOS Day Plan Item"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-09 14:53:04.754971",
+ "modified_by": "Administrator",
+ "module": "FOS",
+ "name": "FOS Day Plan",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

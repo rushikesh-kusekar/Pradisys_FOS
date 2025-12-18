@@ -242,3 +242,50 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+
+
+
+
+
+
+
+
+override_doctype_class = {
+    "FOS Cash Deposit": "pradisys_fos.pradisys_fos.doctype.fos_cash_deposit.fos_cash_deposit.FOSCashDeposit",
+    "FOS Collection": "pradisys_fos.pradisys_fos.doctype.fos_collection.fos_collection.FOSCollection",
+    "FOS Day Plan": "pradisys_fos.pradisys_fos.doctype.fos_day_plan.fos_day_plan.FOSDayPlan",
+    "FOS Case": "pradisys_fos.pradisys_fos.doctype.fos_case.fos_case.FOSCase",
+}
+
+
+
+# Row-level permission for FOS Case
+permission_query_conditions = {
+    "FOS Case": "pradisys_fos.pradisys_fos.doctype.fos_case.fos_case.get_permission_query_conditions",
+}
+
+has_permission = {
+    "FOS Case": "pradisys_fos.pradisys_fos.doctype.fos_case.fos_case.has_permission",
+}
+
+
+
+doctype_js = {
+    "FOS Day Plan": "public/js/fos_day_plan.js",
+    "FOS Attendance": "public/js/fos_attendance.js",
+    "FOS Cash Deposit": "public/js/fos_cash_deposit.js",
+    "FOS Day Plan Item": "public/js/fos_day_plan_item.js",  
+    "FOS Case": "public/js/fos_case.js", 
+}
+
+
+
+
+
+
+fixtures = [
+    {"dt": "Custom Field", "filters": [["name", "like", "FOS%"]]},
+    {"dt": "Property Setter", "filters": [["name", "like", "FOS%"]]},
+    {"dt": "Client Script", "filters": [["name", "like", "FOS%"]]},
+    {"dt": "Server Script", "filters": [["name", "like", "FOS%"]]},
+]

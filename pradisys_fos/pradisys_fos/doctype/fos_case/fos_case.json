@@ -1,0 +1,277 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "CASE-.#####",
+ "creation": "2025-12-01 12:28:55.821633",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fos_customer",
+  "product_type",
+  "status",
+  "priority",
+  "current_address",
+  "column_break_vmvf",
+  "dpd",
+  "overdue_amt",
+  "region",
+  "pending_amount",
+  "section_break_vncr",
+  "is_in_day_plan",
+  "day_plan",
+  "section_break_msbv",
+  "start_collection",
+  "start_kyc",
+  "section_break_liym",
+  "kyc_document",
+  "section_break_vtip",
+  "agent",
+  "visit_date",
+  "column_break_aghx",
+  "outcome_type",
+  "reschedule_date",
+  "visit_selfie",
+  "section_break_uvah",
+  "day_start_time",
+  "start_latitude",
+  "end_latitude",
+  "start_day",
+  "column_break_btaj",
+  "day_end_time",
+  "start_longitude",
+  "end_longitude",
+  "end_day",
+  "section_break_atfs",
+  "geolocation"
+ ],
+ "fields": [
+  {
+   "fieldname": "fos_customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "FOS Customer"
+  },
+  {
+   "fieldname": "product_type",
+   "fieldtype": "Select",
+   "label": "Type Of Visit ",
+   "options": "Payment\nKYC"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nPending\nClosed"
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "\nHigh\nLow"
+  },
+  {
+   "fetch_from": "fos_customer.address",
+   "fieldname": "current_address",
+   "fieldtype": "Small Text",
+   "label": "Current Address"
+  },
+  {
+   "fieldname": "column_break_vmvf",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "dpd",
+   "fieldtype": "Int",
+   "label": "DPD (Days past due)"
+  },
+  {
+   "fieldname": "overdue_amt",
+   "fieldtype": "Currency",
+   "label": "Overdue Amt"
+  },
+  {
+   "fetch_from": "fos_customer.region",
+   "fieldname": "region",
+   "fieldtype": "Data",
+   "label": "Region"
+  },
+  {
+   "fieldname": "pending_amount",
+   "fieldtype": "Currency",
+   "label": "Pending Amount"
+  },
+  {
+   "collapsible": 1,
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "section_break_vncr",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "."
+  },
+  {
+   "default": "0",
+   "fieldname": "is_in_day_plan",
+   "fieldtype": "Check",
+   "label": "Is in Day Plan"
+  },
+  {
+   "fieldname": "day_plan",
+   "fieldtype": "Data",
+   "label": "Day Plan"
+  },
+  {
+   "depends_on": "eval:doc.is_in_day_plan==1",
+   "fieldname": "section_break_msbv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.product_type==\"Payment\"",
+   "fieldname": "start_collection",
+   "fieldtype": "Button",
+   "label": "Start Collection"
+  },
+  {
+   "depends_on": "eval:doc.product_type==\"KYC\"\r\n",
+   "fieldname": "start_kyc",
+   "fieldtype": "Button",
+   "label": "Start KYC"
+  },
+  {
+   "fieldname": "section_break_liym",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.product_type==\"KYC\"",
+   "fieldname": "kyc_document",
+   "fieldtype": "Table",
+   "label": "KYC Document",
+   "options": "FOS Visit KYC"
+  },
+  {
+   "depends_on": "eval:doc.is_in_day_plan==1",
+   "fieldname": "section_break_vtip",
+   "fieldtype": "Section Break",
+   "label": "Visit Details "
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "FOS Agent"
+  },
+  {
+   "default": "Today",
+   "fieldname": "visit_date",
+   "fieldtype": "Date",
+   "label": "Visit Date"
+  },
+  {
+   "fieldname": "column_break_aghx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "outcome_type",
+   "fieldtype": "Select",
+   "label": "Outcome Type",
+   "options": "\nCompleted\nReschedule\nNo Response\nCustomer Not On Location"
+  },
+  {
+   "fieldname": "reschedule_date",
+   "fieldtype": "Date",
+   "label": "Reschedule Date"
+  },
+  {
+   "fieldname": "visit_selfie",
+   "fieldtype": "Attach Image",
+   "label": "Visit Selfie"
+  },
+  {
+   "depends_on": "eval:doc.is_in_day_plan==1",
+   "fieldname": "section_break_uvah",
+   "fieldtype": "Section Break",
+   "label": "Case Tracking"
+  },
+  {
+   "fieldname": "day_start_time",
+   "fieldtype": "Datetime",
+   "label": "Start Time"
+  },
+  {
+   "fieldname": "start_latitude",
+   "fieldtype": "Float",
+   "label": "Start Latitude"
+  },
+  {
+   "fieldname": "end_latitude",
+   "fieldtype": "Float",
+   "label": "End Latitude"
+  },
+  {
+   "fieldname": "start_day",
+   "fieldtype": "Button",
+   "label": "Start Case"
+  },
+  {
+   "fieldname": "column_break_btaj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "day_end_time",
+   "fieldtype": "Datetime",
+   "label": "End Time"
+  },
+  {
+   "fieldname": "start_longitude",
+   "fieldtype": "Float",
+   "label": "Start Longitude"
+  },
+  {
+   "fieldname": "end_longitude",
+   "fieldtype": "Float",
+   "label": "End Longitude"
+  },
+  {
+   "fieldname": "end_day",
+   "fieldtype": "Button",
+   "label": "End Day"
+  },
+  {
+   "depends_on": "eval:doc.is_in_day_plan==1",
+   "fieldname": "section_break_atfs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "geolocation",
+   "fieldtype": "Geolocation",
+   "label": "Geolocation"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-09 14:53:21.354839",
+ "modified_by": "Administrator",
+ "module": "FOS",
+ "name": "FOS Case",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
