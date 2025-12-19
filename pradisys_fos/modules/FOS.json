@@ -1,8 +1,6 @@
 {
   "doctype": "Module Def",
   "module_name": "FOS",
-  "custom": 1,
   "app_name": "pradisys_fos",
-  "package": "pradisys_fos",
-  "restrict_to_domain": null
+  "custom": 0
 }
