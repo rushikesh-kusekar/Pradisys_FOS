@@ -244,6 +244,31 @@ app_license = "mit"
 
 
 
+# -------------------------
+# Fixtures (exported via: bench --site <site> export-fixtures)
+# -------------------------
+
+base_fixtures = [
+    {"dt": "Custom Field", "filters": [["name", "like", "FOS%"]]},
+    {"dt": "Property Setter", "filters": [["name", "like", "FOS%"]]},
+    {"dt": "Client Script", "filters": [["name", "like", "FOS%"]]},
+    {"dt": "Server Script", "filters": [["name", "like", "FOS%"]]},
+]
+
+fos_ui_fixtures = [
+    {"dt": "Workspace", "filters": [["name", "=", "FOS"]]},
+    {"dt": "Custom HTML Block", "filters": [["name", "=", "FOS-Custom Block"]]},
+
+    # Use LIKE so '-' vs '–' dash mismatch doesn't break export
+    {"dt": "Number Card", "filters": [["name", "like", "FOS%"]]},
+    {"dt": "Dashboard Chart", "filters": [["name", "like", "FOS%"]]},
+]
+
+# ✅ Final fixtures used by Frappe
+fixtures = base_fixtures + fos_ui_fixtures
+
+
+
 
 
 
@@ -251,23 +276,22 @@ app_license = "mit"
 
 
 override_doctype_class = {
-    "FOS Cash Deposit": "pradisys_fos.pradisys_fos.doctype.fos_cash_deposit.fos_cash_deposit.FOSCashDeposit",
-    "FOS Collection": "pradisys_fos.pradisys_fos.doctype.fos_collection.fos_collection.FOSCollection",
-    "FOS Day Plan": "pradisys_fos.pradisys_fos.doctype.fos_day_plan.fos_day_plan.FOSDayPlan",
-    "FOS Case": "pradisys_fos.pradisys_fos.doctype.fos_case.fos_case.FOSCase",
+    "FOS Cash Deposit": "pradisys_fos.fos.doctype.fos_cash_deposit.fos_cash_deposit.FOSCashDeposit",
+    "FOS Collection": "pradisys_fos.fos.doctype.fos_collection.fos_collection.FOSCollection",
+    "FOS Day Plan": "pradisys_fos.fos.doctype.fos_day_plan.fos_day_plan.FOSDayPlan",
+    "FOS Case": "pradisys_fos.fos.doctype.fos_case.fos_case.FOSCase",
 }
-
 
 
 # Row-level permission for FOS Case
 permission_query_conditions = {
-    "FOS Case": "pradisys_fos.pradisys_fos.doctype.fos_case.fos_case.get_permission_query_conditions",
+    "FOS Case": "pradisys_fos.fos.permissions.fos_case.get_permission_query_conditions",
+    "FOS Collection": "pradisys_fos.fos.permissions.fos_collection.get_permission_query_conditions",
 }
 
 has_permission = {
-    "FOS Case": "pradisys_fos.pradisys_fos.doctype.fos_case.fos_case.has_permission",
+    "FOS Case": "pradisys_fos.fos.doctype.fos_case.fos_case.has_permission",
 }
-
 
 
 doctype_js = {
@@ -283,9 +307,3 @@ doctype_js = {
 
 
 
-fixtures = [
-    {"dt": "Custom Field", "filters": [["name", "like", "FOS%"]]},
-    {"dt": "Property Setter", "filters": [["name", "like", "FOS%"]]},
-    {"dt": "Client Script", "filters": [["name", "like", "FOS%"]]},
-    {"dt": "Server Script", "filters": [["name", "like", "FOS%"]]},
-]
