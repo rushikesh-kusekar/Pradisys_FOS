@@ -283,14 +283,14 @@ override_doctype_class = {
 }
 
 
-# Row-level permission for FOS Case
 permission_query_conditions = {
     "FOS Case": "pradisys_fos.fos.permissions.fos_case.get_permission_query_conditions",
     "FOS Collection": "pradisys_fos.fos.permissions.fos_collection.get_permission_query_conditions",
 }
 
 has_permission = {
-    "FOS Case": "pradisys_fos.fos.doctype.fos_case.fos_case.has_permission",
+    "FOS Case": "pradisys_fos.fos.permissions.fos_case.has_permission",
+    "FOS Collection": "pradisys_fos.fos.permissions.fos_collection.has_permission",
 }
 
 
