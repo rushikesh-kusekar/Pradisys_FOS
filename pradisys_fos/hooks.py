@@ -251,8 +251,6 @@ app_license = "mit"
 base_fixtures = [
     {"dt": "Custom Field", "filters": [["name", "like", "FOS%"]]},
     {"dt": "Property Setter", "filters": [["name", "like", "FOS%"]]},
-    {"dt": "Client Script", "filters": [["name", "like", "FOS%"]]},
-    {"dt": "Server Script", "filters": [["name", "like", "FOS%"]]},
 ]
 
 fos_ui_fixtures = [
