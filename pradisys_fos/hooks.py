@@ -251,20 +251,23 @@ app_license = "mit"
 base_fixtures = [
     {"dt": "Custom Field", "filters": [["name", "like", "FOS%"]]},
     {"dt": "Property Setter", "filters": [["name", "like", "FOS%"]]},
+
 ]
 
-fos_ui_fixtures = [
-    {"dt": "Workspace", "filters": [["name", "=", "FOS"]]},
-    {"dt": "Custom HTML Block", "filters": [["name", "=", "FOS-Custom Block"]]},
+fos_core_fixtures = [
+    {"dt": "Module Def", "filters": [["name", "=", "FOS"]]},
+    {"dt": "Workspace",  "filters": [["name", "=", "FOS"]]},
+    {"dt": "Role",       "filters": [["name", "in", ["FOS Agent", "FOS Manager"]]]},
+]
 
-    # Use LIKE so '-' vs '–' dash mismatch doesn't break export
+
+fos_ui_fixtures = [
+    {"dt": "Custom HTML Block", "filters": [["name", "=", "FOS-Custom Block"]]},
     {"dt": "Number Card", "filters": [["name", "like", "FOS%"]]},
     {"dt": "Dashboard Chart", "filters": [["name", "like", "FOS%"]]},
 ]
 
-# ✅ Final fixtures used by Frappe
-fixtures = base_fixtures + fos_ui_fixtures
-
+fixtures = base_fixtures + fos_core_fixtures + fos_ui_fixtures
 
 
 
